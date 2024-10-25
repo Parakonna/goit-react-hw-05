@@ -17,10 +17,9 @@ const MovieReviews = () => {
       if (!movieId) return;
       try {
         setLoading(true);
-        setError(null);
         const data = await moviesReviews(movieId);
-        console.log(data);
-        setMovie(data.results);
+        setMovie(data.results[0]);
+        console.log(movie);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -29,7 +28,6 @@ const MovieReviews = () => {
     };
     futchMoviesReviews();
   }, [movieId]);
-  console.log(movie);
 
   return (
     <div>

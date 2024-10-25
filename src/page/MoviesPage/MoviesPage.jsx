@@ -25,7 +25,6 @@ const MoviesPage = () => {
       if (!searchValue) return;
       try {
         setLoading(true);
-        setError(null);
         const data = await searchMovies(searchValue);
         setMovies(data);
       } catch (error) {

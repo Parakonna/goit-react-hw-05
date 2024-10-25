@@ -14,7 +14,6 @@ const HomePage = () => {
     async function fetchMovies() {
       try {
         setLoading(true);
-        setError(null);
         const data = await getMovies();
         setMovies(data);
       } catch (error) {
