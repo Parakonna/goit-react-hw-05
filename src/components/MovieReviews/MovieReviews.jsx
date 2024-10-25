@@ -18,7 +18,7 @@ const MovieReviews = () => {
       try {
         setLoading(true);
         const data = await moviesReviews(movieId);
-        setMovie(data);
+        setMovie(data.results[0]);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -31,11 +31,11 @@ const MovieReviews = () => {
   return (
     <div>
       {movie !== null ? (
-        <h2 className={css.title}>{movie.results[0].author}</h2>
+        <h2 className={css.title}>{movie.author}</h2>
       ) : (
         <p>We do not have any rewiews for this movie.</p>
       )}
-      {movie !== null && <p className={css.text}>{movie.results[0].content}</p>}
+      {movie !== null && <p className={css.text}>{movie.content}</p>}
       {loading && (
         <div>
           <InfinitySpin />
