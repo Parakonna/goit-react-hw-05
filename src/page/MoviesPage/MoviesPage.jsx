@@ -27,7 +27,6 @@ const MoviesPage = () => {
         setLoading(true);
         setError(null);
         const data = await searchMovies(searchValue);
-        console.log(data);
         setMovies(data);
       } catch (error) {
         setError(error.message);
@@ -41,7 +40,7 @@ const MoviesPage = () => {
   return (
     <div className={css.container}>
       <SearchForm onSubmit={onSearch} />
-      {movies.length > 0 && <MovieList movies={movies} />}
+      {movies && <MovieList movies={movies} />}
       {loading && (
         <div>
           <InfinitySpin />

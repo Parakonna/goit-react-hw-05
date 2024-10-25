@@ -17,8 +17,10 @@ const MovieReviews = () => {
       if (!movieId) return;
       try {
         setLoading(true);
+        setError(null);
         const data = await moviesReviews(movieId);
-        setMovie(data.results[0]);
+        console.log(data);
+        setMovie(data.results);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -27,14 +29,11 @@ const MovieReviews = () => {
     };
     futchMoviesReviews();
   }, [movieId]);
+  console.log(movie);
 
   return (
     <div>
-      {movie !== null ? (
-        <h2 className={css.title}>{movie.author}</h2>
-      ) : (
-        <p>We do not have any rewiews for this movie.</p>
-      )}
+      {movie !== null && <h2 className={css.title}>{movie.author}</h2>}
       {movie !== null && <p className={css.text}>{movie.content}</p>}
       {loading && (
         <div>
