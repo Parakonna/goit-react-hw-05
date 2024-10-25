@@ -24,3 +24,13 @@ export const moviesCast = async (id) => {
     const { data } = await moviesInstance.get(`/movie/${id}/credits`);
     return data;
 }
+
+export const moviesReviews = async (id) => {
+    const { data } = await moviesInstance.get(`/movie/${id}/reviews`);
+    return data;
+}
+
+export const searchMovies = async (query) => {
+    const { data } = await moviesInstance.get(`/search/movie`, { params: {query} });
+    return data.results;
+}

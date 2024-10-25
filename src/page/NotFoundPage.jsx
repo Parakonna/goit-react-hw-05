@@ -2,7 +2,10 @@
 
 const NotFoundPage = () => {
   return (
-    <div>NotFoundPage</div>
+    <div>
+      <h2>Not Found Page</h2>
+       <link to="/">Go to Home Page</link>
+    </div>
   )
 }
 

@@ -1,0 +1,17 @@
+.nav{
+    display: flex;
+}
+
+.link{
+padding: 8px 16px;
+font-size: 20px;
+font-weight: 600;
+transition: all 0.35;
+display: inline-flex;
+color: #eadc1e;
+}
+
+.active{
+color: #182cbe;
+background-color: #182cbe;
+}
