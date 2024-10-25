@@ -46,7 +46,7 @@ const MovieReviews = () => {
           <InfinitySpin />
         </div>
       )}
-      {error && <p>Error:&quot;{error}&quot</p>}
+      {error && <p>Error: {error}</p>}
     </div>
   );
 };

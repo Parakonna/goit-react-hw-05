@@ -11,10 +11,11 @@
   padding: 8px 16px;
   font-size: 20px;
   font-weight: 600;
+  color: rgb(22, 31, 115);
   transition: all 0.35;
   display: inline-flex;
 }
 
 .active {
-  color: #eadc1e;
+  color: #0d6d7c;
 }

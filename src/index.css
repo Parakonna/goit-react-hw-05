@@ -22,10 +22,6 @@ a:hover {
   color: #0b606b;
 }
 
-a:active {
-  color: #eadc1e;
-}
-
 body {
   margin: 0;
   min-width: 100vw;
