@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { moviesReviews } from '../../services/api';
 
 import { InfinitySpin } from 'react-loader-spinner';
+import css from './MovieReviews.module.css';
 
 const MovieReviews = () => {
   const [movie, setMovie] = useState(null);
@@ -17,7 +18,6 @@ const MovieReviews = () => {
       try {
         setLoading(true);
         const data = await moviesReviews(movieId);
-        console.log(data);
         setMovie(data);
       } catch (error) {
         setError(error.message);
@@ -30,12 +30,12 @@ const MovieReviews = () => {
 
   return (
     <div>
-      {movie.results > 0 ? (
-        <h2>{movie.results[0].author}</h2>
+      {movie !== null ? (
+        <h2 className={css.title}>{movie.results[0].author}</h2>
       ) : (
         <p>We do not have any rewiews for this movie.</p>
       )}
-      {movie.results > 0 && <p>{movie.results[0].content}</p>}
+      {movie !== null && <p className={css.text}>{movie.results[0].content}</p>}
       {loading && (
         <div>
           <InfinitySpin />

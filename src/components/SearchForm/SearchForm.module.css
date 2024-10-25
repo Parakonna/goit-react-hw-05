@@ -1,0 +1,32 @@
+.header {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 250px;
+  padding: 10px;
+  border: 2px solid var(--color-accent);
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #646cff;
+}
+
+.button {
+  border: 1px solid #646cff;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.button:hover,
+.button:focus {
+  border: 3px solid #054d34;
+}

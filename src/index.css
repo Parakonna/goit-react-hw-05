@@ -14,19 +14,22 @@
 }
 
 a {
-  font-weight: 500;
+  font-weight: 300;
   color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #0b606b;
+}
+
+a:active {
+  color: #eadc1e;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  min-width: 100vw;
+
   min-height: 100vh;
 }
 

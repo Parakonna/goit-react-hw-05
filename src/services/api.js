@@ -22,7 +22,7 @@ export const detailsMovies = async (id) => {
 
 export const moviesCast = async (id) => {
     const { data } = await moviesInstance.get(`/movie/${id}/credits`);
-    return data;
+    return data.results;
 }
 
 export const moviesReviews = async (id) => {

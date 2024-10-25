@@ -36,18 +36,21 @@ const MovieCast = () => {
       <ul className={css.list}>
         {movie &&
           movie.map(mov => (
-            <div key={mov.id}>
-              <h2>{mov.name}</h2>
-              <img
-                src={
-                  mov.profile_path
-                    ? `https://image.tmdb.org/t/p/w500/${mov.profile_path}`
-                    : defaultImg
-                }
-                width={250}
-                alt="poster"
-              ></img>
-            </div>
+            <li className={css.item} key={mov.id}>
+              <div className={css.itemData}>
+                <h2 className={css.title}>{mov.name}</h2>
+                <img
+                  className={css.img}
+                  src={
+                    mov.profile_path
+                      ? `https://image.tmdb.org/t/p/w500/${mov.profile_path}`
+                      : defaultImg
+                  }
+                  width={250}
+                  alt="poster"
+                ></img>
+              </div>
+            </li>
           ))}
       </ul>
       {loading && (

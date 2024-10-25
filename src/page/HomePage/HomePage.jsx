@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { getMovies } from '../services/api';
-import MovieList from '../components/MovieList/MovieList';
-import { useLocation } from 'react-router-dom';
+import { getMovies } from '../../services/api';
+import MovieList from '../../components/MovieList/MovieList';
+
 import { InfinitySpin } from 'react-loader-spinner';
+import css from './HomePage.module.css';
 
 const HomePage = () => {
   const [movies, setMovies] = useState(null);
@@ -25,8 +26,8 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Trending today</h1>
+    <div className={css.home}>
+      <h1 className={css.titel}>Trending today</h1>
       <MovieList movies={movies} />
       {loading && (
         <div>
