@@ -11,7 +11,6 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  console.log(error);
   const [searchParams, setSearchParams] = useSearchParams('');
 
   const searchValue = searchParams.get('q');

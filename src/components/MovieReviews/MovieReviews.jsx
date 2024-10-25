@@ -6,7 +6,7 @@ import { InfinitySpin } from 'react-loader-spinner';
 import css from './MovieReviews.module.css';
 
 const MovieReviews = () => {
-  const [movie, setMovie] = useState(null);
+  const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -18,8 +18,8 @@ const MovieReviews = () => {
       try {
         setLoading(true);
         const data = await moviesReviews(movieId);
-        setMovie(data.results[0]);
-        console.log(movie);
+        console.log(data);
+        setMovies(data.results);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -31,8 +31,16 @@ const MovieReviews = () => {
 
   return (
     <div>
-      {movie !== null && <h2 className={css.title}>{movie.author}</h2>}
-      {movie !== null && <p className={css.text}>{movie.content}</p>}
+      {movies.length > 0 ? (
+        movies.map(movie => (
+          <div key={movie.id}>
+            <h2 className={css.title}>{movie.author}</h2>
+            <p className={css.text}>{movie.content}</p>
+          </div>
+        ))
+      ) : (
+        <p>Sorry</p>
+      )}
       {loading && (
         <div>
           <InfinitySpin />
